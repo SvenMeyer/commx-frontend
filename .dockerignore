@@ -1,4 +1,10 @@
 .git
+.gitignore
 node_modules
-build
-/coverage
+npm-debug.log
+Dockerfile*
+docker-compose*
+README.md
+LICENSE
+.vscode
+.prettierrc

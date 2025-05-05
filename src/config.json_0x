@@ -1,23 +1,8 @@
 {
     "general": {
-        "title": "commX"
+        "title": "Launch Kit"
     },
     "tokens": [
-        {
-            "symbol": "feo1",
-            "name": "Iron Ore Token Type1",
-            "primaryColor": "#333333",
-            "icon": "assets/icons/zrx.svg",
-            "addresses": {
-                "1": "0x1621aec5d5b2e6ec6d9b58399e9d5253af86df5f",
-                "3": "0x1621aec5d5b2e6ec6d9b58399e9d5253af86df5f",
-                "4": "0x1621aec5d5b2e6ec6d9b58399e9d5253af86df5f",
-                "42": "0x1621aec5d5b2e6ec6d9b58399e9d5253af86df5f",
-                "50": "0x1621aec5d5b2e6ec6d9b58399e9d5253af86df5f"
-            },
-            "decimals": 18,
-            "displayDecimals": 4
-        },
         {
             "symbol": "zrx",
             "name": "0x Protocol Token",
@@ -121,14 +106,6 @@
     ],
     "pairs": [
         {
-            "base": "feo1",
-            "quote": "weth"
-        },
-        {
-            "base": "feo1",
-            "quote": "dai"
-        },
-        {
             "base": "zrx",
             "quote": "weth"
         },
@@ -159,8 +136,12 @@
     ],
     "marketFilters": [
         {
-            "text": "FEO1",
-            "value": "feo1"
+            "text": "ETH",
+            "value": "weth"
+        },
+        {
+            "text": "DAI",
+            "value": "dai"
         }
     ]
 }
