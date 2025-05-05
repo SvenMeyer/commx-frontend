@@ -17,9 +17,8 @@ export interface TabItem {
 
 export enum Network {
     Mainnet = 1,
-    Rinkeby = 4,
-    Kovan = 42,
     Ganache = 50,
+    Sepolia = 11155111,
 }
 
 export interface Token {

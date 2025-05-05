@@ -75,7 +75,12 @@ const ToolbarContent = (props: Props) => {
         props.onGoToHome();
     };
     const generalConfig = Config.getConfig().general;
-    const logo = generalConfig && generalConfig.icon ? <ReactSVG src={generalConfig.icon} /> : <LogoSVGStyled />;
+    const logo =
+        generalConfig && generalConfig.icon ? (
+            <img src={generalConfig.icon} alt="Logo" height="33px" />
+        ) : (
+            <LogoSVGStyled />
+        );
     const startContent = (
         <>
             <LogoHeader
