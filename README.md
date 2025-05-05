@@ -22,8 +22,30 @@ Clone this repository and install its dependencies:
 ```
 git clone git@github.com:0xProject/0x-launch-kit-frontend.git
 cd 0x-launch-kit-frontend
-yarn
 ```
+
+### Running Locally (Node v8 Setup)
+
+This project requires Node v8 and Yarn v1. Follow these steps to run it locally:
+
+1.  **Activate Node v8:** Use nvm (or your preferred Node version manager) to switch to a Node v8 environment (v8.17.0 is known to work). Check the `.nvmrc` file.
+    ```bash
+    nvm use
+    ```
+2.  **Install Yarn Locally:** The project uses Yarn, but it needs to be installed locally using npm first. Ensure any existing `package-lock.json` is removed or renamed (e.g., `mv package-lock.json package-lock.json_bak`) before running:
+    ```bash
+    npm install yarn
+    ```
+3.  **Install Dependencies:** Use the locally installed Yarn (via `npx`) to install project dependencies based on `yarn.lock`:
+    ```bash
+    npx yarn install
+    ```
+    _Note: You might see errors related to building the optional `usb` dependency. These can usually be ignored._
+4.  **Start the App:** Run the start script using `npx yarn`. The `NODE_OPTIONS` flag is necessary to work around OpenSSL compatibility issues with newer Node/OS versions:
+    ```bash
+    NODE_OPTIONS=--openssl-legacy-provider npx yarn start
+    ```
+    The application should now be running on `http://localhost:3001`.
 
 ### Using an existing relayer
 
