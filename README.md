@@ -2,7 +2,7 @@
 
 ## ⚠️ Deprecation Warning ️️⚠️
 
-This project is no longer being actively maintained. 
+This project is no longer being actively maintained.
 To fork or run a [Standard Relayer API](https://0x.org/docs/api#sra) instance, you can use the [0x API](https://github.com/0xProject/0x-api) instead.
 
 [![CircleCI](https://circleci.com/gh/0xProject/0x-launch-kit-frontend.svg?style=svg)](https://circleci.com/gh/0xProject/0x-launch-kit-frontend)
@@ -25,10 +25,36 @@ This repo ships with both an ERC-20 token trading interface and an ERC-721 marke
 Clone this repository and install its dependencies:
 
 ```
-git clone git@github.com:0xProject/0x-launch-kit-frontend.git
-cd 0x-launch-kit-frontend
-yarn
+git clone <your-fork-url>
+cd <your-repo-name>
 ```
+
+### Running Locally (Node v8 Setup)
+
+This project requires Node v8 and Yarn v1. Follow these steps to run it locally:
+
+1.  **Activate Node v8:** Use nvm (or your preferred Node version manager) to switch to a Node v8 environment (v8.17.0 is known to work). Check the `.nvmrc` file.
+    ```bash
+    nvm use v8
+    ```
+2.  **Install Yarn Locally:** The project uses Yarn, but it needs to be installed locally using npm first.
+    ```bash
+    npm install yarn
+    ```
+3.  **Install Dependencies:** Use the locally installed Yarn (via `npx`) to install project dependencies based on `yarn.lock`:
+    ```bash
+    npx yarn install
+    ```
+    _Note: You might see errors related to building the optional `usb` dependency. These can usually be ignored._
+4.  **Run Backend:** Ensure you have a compatible 0x backend relayer running (see "Creating a relayer for development" below) and configured in your `.env` file (`REACT_APP_RELAYER_URL` and `REACT_APP_RELAYER_WS_URL`).
+5.  **Start the App:** Run the start script using `npx yarn`. If you encounter `ERR_OSSL_EVP_UNSUPPORTED` errors (common with newer Node/OS versions interacting with older build tools), try explicitly setting the Node v8 path:
+    ```bash
+    # Try this first:
+    npx yarn start
+    # If it fails with ERR_OSSL_EVP_UNSUPPORTED, try this (replace path if needed):
+    PATH=/home/sum/.config/nvm/versions/node/v8.17.0/bin:$PATH npx yarn start
+    ```
+    The application should now be running on `http://localhost:3001`.
 
 ### Using an existing relayer
 
