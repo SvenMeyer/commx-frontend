@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import ReactSVG from 'react-svg';
 import styled, { withTheme } from 'styled-components';
 
 import { ReactComponent as LogoSvg } from '../../../assets/icons/erc20_logo.svg';
